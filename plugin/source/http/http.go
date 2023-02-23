@@ -129,7 +129,7 @@ func (s *Source) DownloadToPath(dlPath string) (err error) {
 	*/
 	outputFilename := path.Base(req.URL.Path)
 	if s.OutputFilename != "" {
-		outputFilename = dlPath
+		outputFilename = s.OutputFilename
 	} else {
 		_, params, err := mime.ParseMediaType(resp.Header.Get("Content-Disposition"))
 		if err == nil {
